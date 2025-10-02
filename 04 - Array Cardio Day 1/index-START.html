@@ -66,7 +66,7 @@
 
     // })
 
-    const orderedByOldest =  inventors.sort((a,b) => (a.year - b.year))
+    // const orderedByOldest =  inventors.sort((a,b) => (a.year - b.year))
 
     // console.table(orderedByOldest)
     // Array.prototype.reduce()
@@ -84,12 +84,22 @@
   //   return total + (currentVal.passed - currentVal.year)
   // },0)
 
-  const totalYears = inventors.reduce((total, currentVal) => {
-    return total + (currentVal.passed - currentVal.year)
-  },0)
-  console.log(totalYears)
+  // const totalYears = inventors.reduce((total, currentVal) => {
+  //   return total + (currentVal.passed - currentVal.year)
+  // },0)
+  // console.log(totalYears)
 
     // 5. Sort the inventors by years lived
+    const orderByLiveYear = inventors.sort(function (a, b) {
+      const lastInventor = a.passed - a.year
+      const nextInventor = b.passed - b.year
+
+      return   nextInventor - lastInventor
+     
+    })
+    // console.table(orderByLiveYear)
+
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
